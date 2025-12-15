@@ -28,3 +28,18 @@
 2025-12-14 22:59:48 INFO  TalentoTech: Obtencion de driver
 2025-12-14 22:59:48 INFO  TalentoTech: Se verifica que el redireccionamiento sea exitoso
 2025-12-14 22:59:48 INFO  TalentoTech: Login completado exitosamente
+2025-12-14 23:56:33 INFO  TalentoTech: Obtencion de driver
+2025-12-14 23:56:33 INFO  TalentoTech: Se verifica que el redireccionamiento sea exitoso
+2025-12-14 23:56:33 INFO  TalentoTech: Login completado exitosamente
+2025-12-14 23:57:04 INFO  TalentoTech: Obtencion de driver
+2025-12-14 23:57:04 INFO  TalentoTech: Se verifica que el redireccionamiento sea exitoso
+2025-12-14 23:57:04 INFO  TalentoTech: Login completado exitosamente
+2025-12-15 00:04:17 INFO  TalentoTech: Obtencion de driver
+2025-12-15 00:04:17 INFO  TalentoTech: Se verifica que el redireccionamiento sea exitoso
+2025-12-15 00:04:17 INFO  TalentoTech: Login completado exitosamente
+2025-12-15 00:05:47 INFO  TalentoTech: Obtencion de driver
+2025-12-15 00:05:47 INFO  TalentoTech: Se verifica que el redireccionamiento sea exitoso
+2025-12-15 00:05:47 INFO  TalentoTech: Login completado exitosamente
+2025-12-15 00:06:23 INFO  TalentoTech: Relizando la solitud GET a https://reqres.in/api/users 
+2025-12-15 00:06:24 INFO  TalentoTech: Status code: 200
+2025-12-15 00:06:24 INFO  TalentoTech: Validando el id dentro del usuario

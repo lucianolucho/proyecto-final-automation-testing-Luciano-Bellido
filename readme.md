@@ -42,7 +42,8 @@ pytest -s test_login.py   --> muestra los print()
 # ignora test
 @pytest.mark.skip(reason="Clase ignorada")
 
-
+# APIS
+se agrega una api key particular para los test de la api reqres
 
 test_carrito.py y test_navegacion_catalogo.py tienen el logindriver basico (configurar con otro mas avanzado)
 
@@ -54,8 +55,8 @@ para acceder a las apis de reqrest
  headers = {"x-api-key": "reqres_32eba74ff27b4390a10d4ec7c60eec96"}
 
 
- ejecutar los test con marcador
+ejecutar los test con marcador
 pytest -m api -v
-  python3 -m  pytest -m api -v
+python3 -m  pytest -m api -v
 
 
