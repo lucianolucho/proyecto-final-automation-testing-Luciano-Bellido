@@ -17,7 +17,8 @@ fake = Faker()
 ])
 def test_login_validation(login_in_driver_faker,usuario,password,debe_funcionar):
     driver = login_in_driver_faker
-
+    LoginPage(driver).login_completo(usuario,password)
+    #driver = login_in_driver_faker.login_completo(usuario,password)
     if debe_funcionar == True:
         assert "/inventory.html" in driver.current_url, "No se redirgio al inventario"
     elif debe_funcionar == False:

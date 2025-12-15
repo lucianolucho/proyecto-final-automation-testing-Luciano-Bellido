@@ -17,7 +17,7 @@ from utils.lector_json import leer_json_productos
 
 import time
 
-@pytest.mark.skip(reason="Clase ignorada")
+#@pytest.mark.skip(reason="Clase ignorada")
 
 #@pytest.mark.parametrize("usuario,password",[("standard_user","secret_sauce")])
 @pytest.mark.parametrize("usuario,password,debe_funcionar",leer_csv_login("datos/login.csv"))
@@ -25,7 +25,7 @@ def test_login_json_validacion(login_in_driver_json, usuario, password, debe_fun
    
     try:
        driver = login_in_driver_json
-       
+      # driver = login_in_driver_json.login_completo(usuario,password)
        print("****************** metodo: test_login_json_validacion ....**************************")       
       
        if debe_funcionar == True:

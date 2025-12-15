@@ -21,7 +21,7 @@ def test_get_user(url_base,header_request):
 def test_create_user(url_base,header_request):
     payload={
         "name": "Luciano",
-        "job": "Desarrollador"
+        "job": "Desarrollador "
     }
     response = requests.post(url_base,headers=header_request,json=payload)
 

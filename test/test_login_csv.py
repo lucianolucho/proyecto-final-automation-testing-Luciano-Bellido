@@ -11,17 +11,16 @@ import time
 import pytest
 
 
-
 #funcion de prueba para el login exitoso 
-@pytest.mark.skip(reason="Clase ignorada")
+#@pytest.mark.skip(reason="Clase ignorada")
 @pytest.mark.parametrize("usuario,password,debe_funcionar",leer_csv_login("datos/login.csv"))
 def test_login_csv_validacion(login_in_driver_csv, usuario, password, debe_funcionar):
    
     try:
        driver = login_in_driver_csv
-       
-       print("****************** metodo: test_login_csv_validacion ....**************************")
-       
+       LoginPage(driver).login_completo(usuario,password)
+       #driver = login_in_driver_csv.login_completo(usuario,password)
+       print("****************** metodo: test_login_csv_validacion ....**************************")      
       
        if debe_funcionar == True:
               assert "/inventory.html" in driver.current_url, "No se redirgio al inventario"

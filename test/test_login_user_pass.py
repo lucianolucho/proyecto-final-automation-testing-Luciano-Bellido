@@ -16,12 +16,14 @@ CASOS_LOGIN = [
 ]
 
 #funcion de prueba para el login exitoso 
-@pytest.mark.skip(reason="Clase ignorada")
+#@pytest.mark.skip(reason="Clase ignorada")
 @pytest.mark.parametrize("usuario, password,debe_funcionar",CASOS_LOGIN)
 def test_login_user_pass_validacion(login_in_driver_usuario_password, usuario, password, debe_funcionar):
    
     try:
        driver = login_in_driver_usuario_password
+       LoginPage(driver).login_completo(usuario,password)
+      # driver = login_in_driver_usuario_password.login_completo(usuario,password)
        
        print("****************** metodo: test_login_user_pass_validacion ....**************************")
        

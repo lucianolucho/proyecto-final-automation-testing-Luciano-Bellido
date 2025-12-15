@@ -12,13 +12,16 @@ import time
 import pytest
 
 #funcion de prueba para el login exitoso 
-def test_login_validacion(login_in_driver, debe_funcionar= True):
+
+def test_login_validacion(login_in_driver,debe_funcionar= True):
    
     try:
        logger.info("Obtencion de driver")
        driver = login_in_driver
+       LoginPage(driver).login_completo("standard_user","secret_sauce")
+       #driver = login_in_driver.login_completo("standard_user","secret_sauce")
        
-       
+       #assert False
        print("****************** metodo: test_login_validacion ....**************************")
        if debe_funcionar == True:
             logger.info("Se verifica que el redireccionamiento sea exitoso") 

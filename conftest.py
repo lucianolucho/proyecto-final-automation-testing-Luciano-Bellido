@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from pages.login_page import LoginPage
 
+from datetime import datetime
 
 import pathlib
 
@@ -34,28 +35,37 @@ def driver():
 
 @pytest.fixture
 def login_in_driver(driver):
-    LoginPage(driver).abrir().login_completo("standard_user","secret_sauce")
+    #LoginPage(driver).abrir().login_completo("standard_user","secret_sauce")
+    LoginPage(driver).abrir()
     return driver
 
 
 @pytest.fixture
-def login_in_driver_usuario_password(driver,usuario,password):
-    LoginPage(driver).abrir().login_completo(usuario,password)
+#def login_in_driver_usuario_password(driver,usuario,password):
+def login_in_driver_usuario_password(driver):
+    #LoginPage(driver).abrir().login_completo(usuario,password)
+    LoginPage(driver).abrir()
     return driver
 
 @pytest.fixture
-def login_in_driver_csv(driver,usuario,password):
-    LoginPage(driver).abrir().login_completo(usuario,password)
+#def login_in_driver_csv(driver,usuario,password):
+def login_in_driver_csv(driver):    
+    #LoginPage(driver).abrir().login_completo(usuario,password)
+    LoginPage(driver).abrir()
     return driver
     
 @pytest.fixture
-def login_in_driver_json(driver,usuario,password):
-    LoginPage(driver).abrir().login_completo(usuario,password)
+#def login_in_driver_json(driver,usuario,password):
+def login_in_driver_json(driver):
+    #LoginPage(driver).abrir().login_completo(usuario,password)
+    LoginPage(driver).abrir()
     return driver   
     
 @pytest.fixture
-def login_in_driver_faker(driver,usuario,password):
-    LoginPage(driver).abrir().login_completo(usuario,password)
+def login_in_driver_faker(driver):
+#def login_in_driver_faker(driver,usuario,password):    
+    #LoginPage(driver).abrir().login_completo(usuario,password)
+    LoginPage(driver).abrir()
     return driver    
 
 #-------------------------------------------------------------------------------------------
@@ -71,6 +81,8 @@ def header_request():
 
 #-------------------------------------------------------------------------------------------
 # seccion captura pantalla
+
+
 @pytest.hookimpl(hookwrapper=True)
 # item : es el nombre del test
 # call: la ejecución interna del test
@@ -92,3 +104,4 @@ def pytest_runtest_makereport(item, call):
             timestamp_unix = int(time.time())
             file_name= target / f"{report.when}_{item.name}_{timestamp_unix}.png"
             driver.save_screenshot(str(file_name))
+            

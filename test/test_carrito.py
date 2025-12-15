@@ -11,10 +11,13 @@ import time
 import pytest
 
 
-@pytest.mark.skip(reason="Clase ignorada")
+#@pytest.mark.skip(reason="Clase ignorada")
 def test_carrito(login_in_driver):
     try:
           driver = login_in_driver
+          LoginPage(driver).login_completo("standard_user","secret_sauce")
+          #driver = login_in_driver.login_completo("standard_user","secret_sauce")
+
           catalogo = InventoryPage(driver)
 
           #Obtengo los productos de la página

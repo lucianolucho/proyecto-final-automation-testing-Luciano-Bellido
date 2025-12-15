@@ -12,11 +12,14 @@ import pytest
 
 #funcion de prueba para el navegacion de catalogo 
 
-@pytest.mark.skip(reason="Clase ignorada")
+#@pytest.mark.skip(reason="Clase ignorada")
 def test_navegacion_catalogo(login_in_driver):  
 
     try:
         driver = login_in_driver
+        LoginPage(driver).login_completo("standard_user","secret_sauce")
+        #driver = login_in_driver.login_completo("standard_user","secret_sauce")
+
         catalogo = InventoryPage(driver)        
 
         #verificar la seccion del titulo 

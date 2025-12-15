@@ -15,14 +15,17 @@ import pytest
 
 RUTA_JSON = "datos/productos.json"
 
-@pytest.mark.skip(reason="Clase ignorada")
+#@pytest.mark.skip(reason="Clase ignorada")
 #@pytest.mark.parametrize("usuario,password,debe_funcionar",datos.leer_csv_login("datos/login.csv"))
 @pytest.mark.parametrize("usuario,password",[("standard_user","secret_sauce")])
 @pytest.mark.parametrize("nombre_producto",lector_json.leer_json_productos(RUTA_JSON))
 
-def test_carrito_json(login_in_driver ,usuario,password,nombre_producto):
+#def test_carrito_json(login_in_driver ,usuario,password,nombre_producto):
+def test_carrito_json(login_in_driver_usuario_password ,usuario,password,nombre_producto):   
     try:
-          driver = login_in_driver
+          driver = login_in_driver_usuario_password
+          LoginPage(driver).login_completo(usuario,password)
+          
           catalogo = InventoryPage(driver)
 
           #Obtengo los productos de la página
