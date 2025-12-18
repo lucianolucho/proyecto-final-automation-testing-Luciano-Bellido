@@ -2,7 +2,7 @@ name: CI Talento tech LJB
 on:
   push:
       branches: [master,main,develop]
-  pul_request:    
+  pull_request:    
        branches: [master,main,develop]
 jobs:
      test:
