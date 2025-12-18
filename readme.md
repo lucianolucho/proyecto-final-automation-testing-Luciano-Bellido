@@ -34,8 +34,6 @@ pip install faker
 El proyecto genera tres tipos principales de resultados durante la ejecucion de las prubas: **reporte HTML**, **capturas de pantalla**, **archivo de log**
 
 
-
-
 ## Como ejecutar las pruebas
 python3 -m run_test.py
 
@@ -78,6 +76,10 @@ Este proyecto ofrece una estructura organizada y escalable para automatizar prue
 
 La arquitectura del proyecto esta pensada para agregar nuevos casos de prueba y configuraciones sin modificar el nucleo del proyecto, manteniendo buenas practicas y permitiendo su escalabilidad en el tiempo.
 
+
+comando para instalr dependencias:
+
+python3 -m pip install -r requirements.txt
 
 
 

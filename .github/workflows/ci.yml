@@ -1,0 +1,50 @@
+name: CI Talento tech LJB
+on:
+  push:
+      branches: [master,main,develop]
+  pul_request:    
+       branches: [master,main,develop]
+jobs:
+     test:
+        runs-on: ubuntu-latest
+        env:
+           PYTHON_VERSION: '3.12'
+           PIP_CACHE: ~/.cache/pip 
+
+        steps: 
+             #1 checkout
+             - name: checkout codigo
+               uses: actions/checkout@v4
+             #2 cache de pip
+             - name: cache dependencia
+               uses: actions/cache@v4
+               with:
+                  path: ${{ env.PIP_CACHE}}
+                  key: ${{ runner.os}}-pip-${{  hashFiles('**requirements.txt')}}
+
+             #3 setup python
+             - name: Instalar python ${{  env.PYTHON_VERSION}}
+               uses: actions/setup-python@v5 
+               with: 
+                   python-version:  ${{ env.PYTHON_VERSION }}
+             
+             #4 instalar dependencias
+             - name: instalar dependencias
+               run: pip install -r requirements.txt
+
+             #5 Ejecutar test
+             - name: Run test
+               run: python3 runner_github_actions.py
+
+              #6 subir artefactos (reporte + imagenes + logs) 
+             - name: Subir HTML report
+               uses: actions/upload-artifact@v4
+               with: 
+                  name: html-report
+                  path: reports/
+
+             - name: subir suite logs
+               uses: actions/upload-artifact@v4
+               with: 
+                  name: suite-log
+                  path: logs/   
